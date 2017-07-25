@@ -15,7 +15,7 @@ type recycler struct {
     takeChan, giveChan chan []byte
 }
 
-func NewRecycler(size uint32) *recycler {
+func NewRecycler(size int64) *recycler {
     r := &recycler{
         q: new(list.List),
         takeChan: make(chan []byte),
@@ -25,7 +25,7 @@ func NewRecycler(size uint32) *recycler {
     return r
 }
 
-func (r *recycler) cycle(size uint32) {
+func (r *recycler) cycle(size int64) {
     for {
         if r.q.Len() == 0 {
             // put to front so we always use the most recent buf

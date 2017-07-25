@@ -17,7 +17,7 @@ type Tunnel struct {
     pool *recycler
 }
 
-func NewTunnel(faddr, baddr string, clientMode bool, cryptoMethod, secret string, size uint32) *Tunnel {
+func NewTunnel(faddr, baddr string, clientMode bool, cryptoMethod, secret string, size int64) *Tunnel {
     a1, err := net.ResolveTCPAddr("tcp", faddr)
     if err != nil {
         log.Fatalln("resolve frontend error:", err)
