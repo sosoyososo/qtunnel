@@ -18,7 +18,7 @@ type Tunnel struct {
 }
 
 func NewTunnel(faddr, baddr string, clientMode bool, cryptoMethod, secret string, size int64) *Tunnel {
-    a1, err := net.ResolveTCPAddr("tcp", faddr)
+    a1, err := net.ResolveTCPAddr("tcp4", faddr)
     if err != nil {
         log.Fatalln("resolve frontend error:", err)
     }
