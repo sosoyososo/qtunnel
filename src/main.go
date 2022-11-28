@@ -7,7 +7,7 @@ import (
     "log"
     "log/syslog"
     "flag"
-    "tunnel"
+    "qtunnel/tunnel"
 )
 
 func waitSignal() {
