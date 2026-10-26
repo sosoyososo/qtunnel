@@ -1,3 +1,6 @@
 pkg/
 bin/
 debian/qtunnel*
+
+# macOS
+.DS_Store
